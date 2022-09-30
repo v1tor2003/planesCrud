@@ -1,0 +1,12 @@
+const express = require("express");
+const cors = require("cors") 
+const app = express();
+
+app.use(express.json());
+app.use(cors())
+app.use("/auth", require("./routes/auth"));
+app.use("/posts", require("./routes/posts"));
+
+app.listen(3001, () => {
+  console.log("Listening on port 3001");
+});
